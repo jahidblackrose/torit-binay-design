@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { BilingualText, LanguageToggle } from "@/components/BilingualText";
 import { toast } from "@/hooks/use-toast";
+import mtbLogo from "@/assets/mtvb_logo.png";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -75,13 +76,12 @@ const Dashboard = () => {
       <header className="border-b bg-card">
         <div className="banking-container py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <CreditCard className="w-6 h-6 text-primary-foreground" />
-              </div>
+            <div className="flex items-center gap-4">
+              <img src={mtbLogo} alt="MTB Logo" className="h-8" />
+              <div className="mline-separator-vertical h-8"></div>
               <div>
-                <h1 className="text-xl font-bold">
-                  <BilingualText english="MTB Torit e-Rin" bengali="এমটিবি তরিৎ ই-রিন" />
+                <h1 className="text-xl font-bold text-mtb-primary">
+                  <BilingualText english="Torit e-Rin" bengali="তরিৎ ই-রিন" />
                 </h1>
                 <p className="text-sm text-muted-foreground">
                   <BilingualText english="Welcome back" bengali="স্বাগতম" />

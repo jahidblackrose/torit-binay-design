@@ -6,6 +6,7 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp
 import { ArrowLeft, Shield, RefreshCw } from "lucide-react";
 import { BilingualText } from "@/components/BilingualText";
 import { toast } from "@/hooks/use-toast";
+import mtbLogo from "@/assets/mtvb_logo.png";
 
 const OtpVerification = () => {
   const [otp, setOtp] = useState("");
@@ -75,8 +76,13 @@ const OtpVerification = () => {
           {/* OTP Verification Card */}
           <Card className="banking-card-elevated animate-slide-up">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-primary" />
+              {/* MTB Logo */}
+              <div className="flex justify-center mb-4">
+                <img src={mtbLogo} alt="MTB Logo" className="h-12" />
+              </div>
+              <div className="mline-separator w-16 mx-auto mb-4"></div>
+              <div className="w-16 h-16 bg-mtb-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-mtb-primary" />
               </div>
               <CardTitle>
                 <BilingualText english="OTP Verification" bengali="ওটিপি যাচাইকরণ" />

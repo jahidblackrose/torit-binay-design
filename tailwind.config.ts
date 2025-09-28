@@ -63,6 +63,13 @@ export default {
         pending: "hsl(var(--pending))",
         approved: "hsl(var(--approved))",
         rejected: "hsl(var(--rejected))",
+        // MTB Brand Colors
+        "mtb-primary": "hsl(var(--mtb-primary))",
+        "mtb-secondary": "hsl(var(--mtb-secondary))",
+        "mtb-accent": "hsl(var(--mtb-accent))",
+        "mtb-neutral": "hsl(var(--mtb-neutral))",
+        "mtb-text": "hsl(var(--mtb-text))",
+        "mtb-border": "hsl(var(--mtb-border))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

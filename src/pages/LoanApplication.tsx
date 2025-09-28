@@ -14,6 +14,7 @@ import { LoanSummaryStep } from "@/components/loan-steps/LoanSummaryStep";
 import { FaceVerificationStep } from "@/components/loan-steps/FaceVerificationStep";
 import { TermsConditionsStep } from "@/components/loan-steps/TermsConditionsStep";
 import { ApplicationConfirmationStep } from "@/components/loan-steps/ApplicationConfirmationStep";
+import mtbLogo from "@/assets/mtvb_logo.png";
 
 const STEPS = [
   { id: 1, title: "Personal Info", titleBengali: "ব্যক্তিগত তথ্য" },
@@ -88,16 +89,20 @@ const LoanApplication = () => {
               <BilingualText english="Back" bengali="পিছনে" />
             </Button>
             
-            <div className="text-center">
-              <h1 className="text-lg font-semibold">
-                <BilingualText english="Loan Application" bengali="ঋণের আবেদন" />
-              </h1>
-              <p className="text-sm text-muted-foreground">
-                <BilingualText 
-                  english={`Step ${currentStep} of ${STEPS.length}`}
-                  bengali={`ধাপ ${currentStep} এর ${STEPS.length}`}
-                />
-              </p>
+            <div className="text-center flex items-center gap-3">
+              <img src={mtbLogo} alt="MTB Logo" className="h-6" />
+              <div className="mline-separator-vertical h-6"></div>
+              <div>
+                <h1 className="text-lg font-semibold text-mtb-primary">
+                  <BilingualText english="Loan Application" bengali="ঋণের আবেদন" />
+                </h1>
+                <p className="text-sm text-muted-foreground">
+                  <BilingualText 
+                    english={`Step ${currentStep} of ${STEPS.length}`}
+                    bengali={`ধাপ ${currentStep} এর ${STEPS.length}`}
+                  />
+                </p>
+              </div>
             </div>
             
             <div className="w-16" /> {/* Spacer for alignment */}

@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, AlertTriangle, CheckCircle, CreditCard } from "lucide-react";
 import { BilingualText } from "@/components/BilingualText";
 import { toast } from "@/hooks/use-toast";
+import mtbLogo from "@/assets/mtvb_logo.png";
 
 const LoanClosure = () => {
   const [step, setStep] = useState(1);
@@ -58,14 +59,26 @@ const LoanClosure = () => {
       {/* Header */}
       <header className="border-b bg-card">
         <div className="banking-container py-4">
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate(-1)}
-            className="p-0 h-auto hover:bg-transparent"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            <BilingualText english="Back" bengali="পিছনে" />
-          </Button>
+          <div className="flex items-center justify-between">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate(-1)}
+              className="p-0 h-auto hover:bg-transparent"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              <BilingualText english="Back" bengali="পিছনে" />
+            </Button>
+            
+            <div className="flex items-center gap-3">
+              <img src={mtbLogo} alt="MTB Logo" className="h-6" />
+              <div className="mline-separator-vertical h-6"></div>
+              <h1 className="text-lg font-semibold text-mtb-primary">
+                <BilingualText english="Loan Closure" bengali="ঋণ বন্ধ" />
+              </h1>
+            </div>
+            
+            <div className="w-16"></div>
+          </div>
         </div>
       </header>
 

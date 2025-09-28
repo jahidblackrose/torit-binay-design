@@ -9,6 +9,7 @@ import OtpVerification from "./pages/OtpVerification";
 import Dashboard from "./pages/Dashboard";
 import LoanApplication from "./pages/LoanApplication";
 import LoanClosure from "./pages/LoanClosure";
+import LoanCalculator from "./pages/LoanCalculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/loan-application" element={<LoanApplication />} />
           <Route path="/loan-closure" element={<LoanClosure />} />
+          <Route path="/loan-calculator" element={<LoanCalculator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

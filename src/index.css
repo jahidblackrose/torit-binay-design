@@ -6,66 +6,74 @@
 
 @layer base {
   :root {
+    /* MTB Official Brand Colors */
+    --mtb-primary: 31 61 122; /* #1F3D7A - MTB Corporate Blue */
+    --mtb-secondary: 46 80 156; /* #2E509C - Lighter MTB Blue */
+    --mtb-accent: 0 166 81; /* #00A651 - Banking/Trust Green */
+    --mtb-neutral: 245 247 250; /* #F5F7FA - Background Grey */
+    --mtb-text: 51 51 51; /* #333333 - Text Dark */
+    --mtb-border: 225 229 235; /* #E1E5EB - Border Light */
+
     /* Core Banking Colors */
-    --background: 245 245 250; /* Soft off-white */
-    --foreground: 220 13% 18%; /* Dark charcoal */
+    --background: var(--mtb-neutral); /* Soft off-white */
+    --foreground: var(--mtb-text); /* Dark charcoal */
 
     --card: 0 0% 100%; /* Pure white */
-    --card-foreground: 220 13% 18%;
+    --card-foreground: var(--mtb-text);
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 18%;
+    --popover-foreground: var(--mtb-text);
 
     /* MTB Primary - Professional Banking Blue */
-    --primary: 214 84% 56%; /* Trustworthy blue */
+    --primary: var(--mtb-primary); /* Trustworthy blue */
     --primary-foreground: 0 0% 100%;
     --primary-light: 214 84% 70%;
     --primary-dark: 214 84% 42%;
 
     /* Secondary - Success Green */
-    --secondary: 142 76% 36%; /* Professional green */
+    --secondary: var(--mtb-accent); /* Professional green */
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 142 76% 50%;
 
     /* Accent - Action Orange */
-    --accent: 25 95% 53%; /* Warm orange for CTAs */
+    --accent: var(--mtb-secondary); /* Warm secondary blue for CTAs */
     --accent-foreground: 0 0% 100%;
     --accent-light: 25 95% 67%;
 
     /* Status Colors */
-    --success: 142 76% 36%;
+    --success: var(--mtb-accent);
     --success-foreground: 0 0% 100%;
     --warning: 43 96% 56%;
-    --warning-foreground: 220 13% 18%;
+    --warning-foreground: var(--mtb-text);
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Neutral System */
-    --muted: 220 13% 95%; /* Light gray backgrounds */
+    --muted: var(--mtb-border); /* Light gray backgrounds */
     --muted-foreground: 220 13% 46%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 214 84% 56%;
+    --border: var(--mtb-border);
+    --input: var(--mtb-border);
+    --ring: var(--mtb-primary);
 
     /* Banking Specific */
-    --secure: 142 76% 36%; /* Security indicators */
+    --secure: var(--mtb-accent); /* Security indicators */
     --pending: 43 96% 56%; /* Pending status */
-    --approved: 142 76% 36%; /* Approved status */
+    --approved: var(--mtb-accent); /* Approved status */
     --rejected: 0 84% 60%; /* Rejected status */
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 70%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 42%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 13% 98%) 100%);
+    /* MTB Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--mtb-primary)), hsl(var(--mtb-secondary)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--mtb-accent)), hsl(142 76% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--mtb-primary)) 0%, hsl(214 84% 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(var(--mtb-neutral)) 100%);
 
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
-    --shadow-elevated: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
-    --shadow-button: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    /* MTB Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(var(--mtb-text) / 0.1), 0 2px 4px -1px hsl(var(--mtb-text) / 0.06);
+    --shadow-elevated: 0 10px 15px -3px hsl(var(--mtb-text) / 0.1), 0 4px 6px -2px hsl(var(--mtb-text) / 0.05);
+    --shadow-button: 0 1px 2px 0 hsl(var(--mtb-text) / 0.05);
 
     /* Radius */
-    --radius: 0.75rem;
+    --radius: 0.375rem; /* 6px - MTB rounded corners */
 
     --sidebar-background: 0 0% 98%;
 
@@ -134,29 +142,39 @@
 }
 
 @layer components {
-  /* Banking Interface Components */
+  /* MTB Banking Interface Components */
   .banking-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .banking-card {
-    @apply bg-card rounded-xl border border-border shadow-[var(--shadow-card)] p-6;
+    @apply bg-card rounded-lg border border-border shadow-[var(--shadow-card)] p-6;
   }
 
   .banking-card-elevated {
-    @apply bg-card rounded-xl border border-border shadow-[var(--shadow-elevated)] p-6;
+    @apply bg-card rounded-lg border border-border shadow-[var(--shadow-elevated)] p-6;
   }
 
+  /* MTB Mline Separator - Signature design element */
+  .mline-separator {
+    @apply h-1 bg-gradient-to-r from-mtb-primary to-mtb-secondary rounded-full;
+  }
+  
+  .mline-separator-vertical {
+    @apply w-1 bg-gradient-to-b from-mtb-primary to-mtb-secondary rounded-full;
+  }
+
+  /* Step Indicators */
   .step-indicator {
     @apply flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium transition-all duration-200;
   }
 
   .step-indicator-active {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-mtb-primary text-white;
   }
 
   .step-indicator-completed {
-    @apply bg-secondary text-secondary-foreground;
+    @apply bg-mtb-accent text-white;
   }
 
   .step-indicator-inactive {
@@ -164,7 +182,7 @@
   }
 
   .form-section {
-    @apply space-y-6 p-6 bg-card rounded-xl border border-border;
+    @apply space-y-6 p-6 bg-card rounded-lg border border-border;
   }
 
   .bilingual-label {
@@ -172,7 +190,7 @@
   }
 
   .loan-amount-display {
-    @apply text-3xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+    @apply text-3xl font-bold bg-gradient-to-r from-mtb-primary to-mtb-secondary bg-clip-text text-transparent;
   }
 
   .status-badge {
@@ -184,7 +202,7 @@
   }
 
   .status-approved {
-    @apply bg-success/10 text-success-foreground border border-success/20;
+    @apply bg-mtb-accent/10 text-white border border-mtb-accent/20;
   }
 
   .status-rejected {
